@@ -10,7 +10,6 @@
   with_items:
   - wordpress
   - wpdb
-  - traefik/ssl
   - nginx
   - nginx-conf
   - logs/nginx
@@ -42,14 +41,6 @@
   template:
     src: nginx.conf.j2
     dest: "{{ compose_project_dir }}/nginx/nginx.conf"
-    owner: "{{ system_user }}"
-    group: "{{ system_user }}"
-    mode: 0644
-
-- name: Deploy traefik configuration
-  template:
-    src: traefik.toml.j2
-    dest: "{{ compose_project_dir }}/traefik/traefik.toml"
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
     mode: 0644
