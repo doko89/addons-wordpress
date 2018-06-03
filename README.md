@@ -1,11 +1,10 @@
-Ansible Role: Traefik WordPress
+Ansible Role: Addons WordPress
 =========
 
-This Ansible playbook will Deploy & run Docker Compose project for WordPress instance. It will also configure Let's Encrypt certificates for 
+This Ansible playbook will Deploy & run Docker Compose project for WordPress instance Inside existing Traefik Proxy.
 specified domain. It consists of 4 separate containers running:
 * WordPress (PHP7 FPM)
 * Nginx 
-* Traefik (enabled with Let's Encrpt HTTPS encryption)
 * MariaDB
 
 This role was created as part of [Traefik Wordpress](https://github.com/doko89/traefik-wordpress)
@@ -45,7 +44,7 @@ Example Playbook
   vars_files:
   - ./vars.yml
   roles:
-  - traefik-wordpress
+  - addons-wordpress
 
 ```
 
